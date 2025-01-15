@@ -8,9 +8,18 @@
  * @returns {str}
  */
 
-export function truncateString(str) {
+export function truncateString(str, length) {
+  if (str.length > length) {
+  return str.slice(0, length - 3) + '...';
+  } else {
+  return str;
+  }
   // your implementation here
 }
+
+let inputString = 'Hello World!';
+let truncatedString = truncateString(inputString, 10);
+console.log(truncatedString);
 
 /**
  * Write an implementation of the 'selectUniqueValues' function
@@ -21,6 +30,7 @@ export function truncateString(str) {
  */
 
 export function selectUniqueValues(arr) {
+  return Array.from(new Set(arr));
   // your implementation here
 }
 
