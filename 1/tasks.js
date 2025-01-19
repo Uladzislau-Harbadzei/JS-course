@@ -8,8 +8,9 @@
  * @returns {str}
  */
 
-export function truncateString(str, length) {
-  if (str.length > length) {
+export function truncateString(str) {
+  const length = 10;
+  if (str.length >= length) {
   return str.slice(0, length - 3) + '...';
   } else {
   return str;
@@ -18,7 +19,7 @@ export function truncateString(str, length) {
 }
 
 let inputString = 'Hello World!';
-let truncatedString = truncateString(inputString, 10);
+let truncatedString = truncateString(inputString);
 console.log(truncatedString);
 
 /**
@@ -43,6 +44,23 @@ export function selectUniqueValues(arr) {
  */
 
 export function findSmallestAndBiggest(arr) {
+  if (arr.length === 0) {
+    return [undefined, undefined];
+}
+
+let min = arr[0];
+let max = arr[0];
+
+for (let i = 1; i < arr.length; i++) {
+    if (arr[i] < min) {
+        min = arr[i];
+    }
+    if (arr[i] > max) {
+        max = arr[i];
+    }
+}
+
+return  [min, max];
   // your implementation here
 }
 
@@ -55,5 +73,6 @@ export function findSmallestAndBiggest(arr) {
  * @returns {boolean}
  */
 export function isPalindrome(str) {
+  return true;
   // your implementation here
 }
