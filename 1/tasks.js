@@ -73,6 +73,7 @@ return  [min, max];
  * @returns {boolean}
  */
 export function isPalindrome(str) {
-  return true;
+  let pal = str.toLowerCase().replace(/[\W_]/g, "");
+  return pal === pal.split("").reverse().join("");
   // your implementation here
 }
